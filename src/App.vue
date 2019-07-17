@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <div @click="goBack">返回</div>
+    <!-- <div class="md-back" @click="goBack"> -->
+    <md-button style="display:block;" type="link" icon="arrow-left" @click="goBack">返回</md-button>
+    <!-- </div> -->
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
@@ -10,6 +12,7 @@
 </template>
 
 <script>
+import { Icon, Button } from 'mand-mobile'
 // @ is an alias to /src
 // import Home from "@/components/Home.vue";
 
@@ -20,18 +23,22 @@
 //   }
 // };
 export default {
-  name: "app",
+  name: 'app',
+  components: {
+    [Icon.name]: Icon,
+    [Button.name]: Button
+  },
   methods: {
     goBack() {
-      this.$router.back(-1);
+      this.$router.back(-1)
     }
   }
-};
+}
 </script>
 
 <style scoped>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

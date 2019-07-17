@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example-child md-example-child-result-page md-example-child-result-page-2">
+  <div class="md-example-child md-example-child-result-page md-example-child-result-page-2" style="margin-top:0.64rem;">
     <md-result-page text="转账成功"></md-result-page>
     <md-button
       type="primary"
